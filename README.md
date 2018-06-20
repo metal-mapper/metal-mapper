@@ -2,7 +2,9 @@
 
 A project for MCR Codes coding bootcamp by Sophie Ashcroft, Helena Nicholson, and Kirsty Devlin
 
-## Getting Started
+## What is Metal-Mapper
+
+Metal-mapper is a web app that helps metal fans discover pubs and music venues in the new places they visit.
 
 ### Clone down this repository (replace `<your_project_name>`:
 
