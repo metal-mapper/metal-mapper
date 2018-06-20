@@ -1,6 +1,6 @@
-# React Bootstrap
+# Metal-Mapper
 
-React boilerplate project for Manchester Codes' projects.
+A project for MCR Codes coding bootcamp by Sophie Ashcroft, Helena Nicholson, and Kirsty Devlin
 
 ## Getting Started
 
