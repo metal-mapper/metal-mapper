@@ -1,17 +1,38 @@
 import React from 'react';
 
-
 class Login extends React.Component {
   render() {
     return (
       <div>
-          <button onClick={() => window.FB.login()}>Log in with Facebook</button>
+        <button
+          onClick={() => window.FB.login(response => console.log(response))}
+        >
+          Log in with Facebook
+        </button>
       </div>
     );
   }
 }
 
-// TAKEN FROM AUTHENTIFICATION EXAMPLE FOR REFERENCE
+// //'Taken from the sample code above, here's some of the code that's run during page load to check a person's login status:'
+// FB.getLoginStatus(function(response) {
+//   statusChangeCallback(response);
+// });
+
+// //'The response object that's provided to your callback contains a number of fields:'
+
+// //maybe put this in app and on component did mount
+// {
+//   status: 'connected',
+//   authResponse: {
+//       accessToken: '...',
+//       expiresIn:'...',
+//       signedRequest:'...',
+//       userID:'...'
+//   }
+// }
+
+// TAKEN FROM AUTHENTIFICATION EXAMPLE CODE MICHAAL DID FOR REFERENCE
 
 // import React from 'react';
 // import PropTypes from 'prop-types';
