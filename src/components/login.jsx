@@ -5,9 +5,7 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <button>
-          Login with Facebook!
-        </button>
+          <button onClick={() => window.FB.login()}>Log in with Facebook</button>
       </div>
     );
   }
