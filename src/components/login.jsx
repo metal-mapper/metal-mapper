@@ -11,13 +11,44 @@ class Login extends React.Component {
 
   initializeFacebookLogIn = () => {
     this.FB = window.FB;
+    this.checkLoginStatus();
+  }
+
+  checkLoginStatus = () => {
+    this.FB.getLoginStatus(this.facebookLoginHandler);
+  }
+
+  facebookLoginHandler = response => {
+    if (response.status === 'connected'){
+      this.FB.api('/me', userData => {
+        let result = {
+          ...response,
+          user: userData
+        };
+        this.props.onLogin(true,result);
+      });
+    } else {
+      this.props.onLogin(false);
+    }
+  }
+
+  facebookLogin = () => {
+    if (!this.FB) return;
+
+    this.FB.getLoginStatus(response => {
+      if (response.status === 'connected') {
+        this.facebookLoginHandler(response);
+      } else {
+        this.FB.login(this.facebookLoginHandler, {scope: 'public_profile'});
+      }
+    })
   }
 
   render() {
     return (
       <div>
         <button
-          onClick={() => window.FB.login(response => console.log(response))}
+          onClick={this.facebookLogin}>
         >
           Log in with Facebook
         </button>
@@ -25,6 +56,8 @@ class Login extends React.Component {
     );
   }
 }
+
+//below taken from the officil facebook instructions 
 
 FB.login((response) => {
   if (response.authResponse) {
