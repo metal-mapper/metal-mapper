@@ -9,9 +9,13 @@
 
   <body>
 
-<!-- facebook SDK  -->
+    <div id="root"></div>
+    <script type="text/javascript" src="app.js"></script>
 
-<script>
+  </body>
+
+<!-- facebook SDK  -->
+  <script>
     window.fbAsyncInit = function() {
       FB.init({
         appId      : '410187756126709',
@@ -20,9 +24,14 @@
         version    : 'v3.0'
       });
         
-      FB.AppEvents.logPageView();   
-        
+// Broadcast an event when FB object is ready
+    var fbInitEvent = new Event('FBObjectReady');
+      document.dispatchEvent(fbInitEvent);
     };
+
+    //   FB.AppEvents.logPageView();   
+        
+    // };
   
     (function(d, s, id){
        var js, fjs = d.getElementsByTagName(s)[0];
@@ -33,13 +42,4 @@
      }(document, 'script', 'facebook-jssdk'));
   </script>
 
-    <div id="root"></div>
-    <script type="text/javascript" src="app.js"></script>
-  </body>
 </html>
-
-
-
-
-
-

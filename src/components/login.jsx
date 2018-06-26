@@ -1,6 +1,18 @@
 import React from 'react';
 
 class Login extends React.Component {
+  componentDidMount() {
+    document.addEventListener('FBObjectReady', this.initializeFacebookLogIn);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('FBObjectReady', this.initializeFacebookLogIn);
+  }
+
+  initializeFacebookLogIn = () => {
+    this.FB = window.FB;
+  }
+
   render() {
     return (
       <div>
@@ -13,6 +25,17 @@ class Login extends React.Component {
     );
   }
 }
+
+FB.login((response) => {
+  if (response.authResponse) {
+   console.log('Welcome!  Fetching your information.... ');
+   FB.api('/me', function(response) {
+     console.log('Good to see you, ' + response.name + '.');
+   });
+  } else {
+   console.log('User cancelled login or did not fully authorize.');
+  }
+});
 
 // //'Taken from the sample code above, here's some of the code that's run during page load to check a person's login status:'
 // FB.getLoginStatus(function(response) {
