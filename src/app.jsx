@@ -1,6 +1,7 @@
 import React from 'react';
 import Login from './components/login';
 
+//This TopNav and MiddleNav needs to be turned into a component within navBar.jsx NOT HERE
 const App = () => (
   <div>
     <div className="topnav">
