@@ -22,17 +22,17 @@ testing123
 npm i
 ```
 
-### Start up the application:
+# Start up the application:
 
 ```bash
 npm start
 ```
 
-### Visit `localhost:8080` in your browser.
+# Visit `localhost:8080` in your browser.
 
 You should see a **Hello World** message.
 
-### Change the rendered output
+# Change the rendered output
 
 You can change what is mounted to the DOM in `src/index.jsx`. 
 
