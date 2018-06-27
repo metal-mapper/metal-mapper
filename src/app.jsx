@@ -22,8 +22,10 @@ class App extends React.Component {
 
   render() {
     return (
+
+//put routes (whih are JSX components in here somewhere
       <div>
-        <div className="topnav">
+        {/* <div className="topnav">
           <a className="active" href="#home">Home</a>
           <a href="#BrowseLocation">Browse Locations</a>
           <a href="#AddLocation">Add Location</a>
@@ -37,7 +39,7 @@ class App extends React.Component {
         <div style={{ paddingLeft: '16px' }}>
           <h2>Metal Mapper Guide</h2>
           <p>Search below for your perfect Metal Mapper trip:</p>
-        </div>
+        </div> */}
         <Login onLogin = {this.onFacebookLogin}/>
       </div>
     )
