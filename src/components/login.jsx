@@ -40,7 +40,7 @@ class Login extends React.Component {
       if (response.status === 'connected') {
         this.facebookLoginHandler(response);
       } else {
-        this.FB.login(this.facebookLoginHandler, {scope: 'public_profile'});
+        this.FB.login(this.facebookLoginHandler, {scope: 'public_profile, user_location'});
       }
     })
   }
@@ -58,7 +58,6 @@ class Login extends React.Component {
 }
 
 //below taken from the officil facebook instructions 
-// hello
 
 // FB.login((response) => {
 //   if (response.authResponse) {
