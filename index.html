@@ -8,30 +8,38 @@
   </head>
 
   <body>
+
     <div id="root"></div>
     <script type="text/javascript" src="app.js"></script>
 
-    <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="#BrowseLocation">Browse Locations</a>
-      <a href="#AddLocation">Add Location</a>
-    </div>
-    
-    <div class="middlenav">
-      <a href="#Register">Register</a>
-      <a href="#LogIn">Log In</a>
-    </div>
-    
-    <div style="padding-left:16px">
-      <h2>Metal Mapper Guide</h2>
-      <p>Search below for your perfect Metal Mapper trip:</p>
-    </div>
-    
   </body>
+
+<!-- facebook SDK  -->
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '410187756126709',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v3.0'
+      });
+        
+// Broadcast an event when FB object is ready
+    var fbInitEvent = new Event('FBObjectReady');
+      document.dispatchEvent(fbInitEvent);
+    };
+
+    //   FB.AppEvents.logPageView();   
+        
+    // };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
 </html>
-
-
-
-
-
-
