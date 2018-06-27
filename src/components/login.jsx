@@ -9,7 +9,7 @@ class Login extends React.Component {
     document.removeEventListener('FBObjectReady', this.initializeFacebookLogIn);
   }
 
-  initializeFacebookLogIn = () => {
+  initializeFacebookLogIn() {
     this.FB = window.FB;
     this.checkLoginStatus();
   }
@@ -49,7 +49,6 @@ class Login extends React.Component {
       <div>
         <button
           onClick={this.facebookLogin}>
-        >
           Log in with Facebook
         </button>
       </div>
