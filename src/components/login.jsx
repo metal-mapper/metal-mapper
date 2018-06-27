@@ -58,6 +58,7 @@ class Login extends React.Component {
 }
 
 //below taken from the officil facebook instructions 
+// hello
 
 // FB.login((response) => {
 //   if (response.authResponse) {
