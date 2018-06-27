@@ -47,5 +47,6 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname),
     historyApiFallback: true,
+    https: true,
   },
 };
