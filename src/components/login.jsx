@@ -9,22 +9,23 @@ class Login extends React.Component {
     document.removeEventListener('FBObjectReady', this.initializeFacebookLogIn);
   }
 
-  initializeFacebookLogIn() {
+  initializeFacebookLogIn = () => {
     this.FB = window.FB;
     this.checkLoginStatus();
   }
+
+  //adding constructor function here (acts to set initial values) a method called constructor then you have this.state=
 
   checkLoginStatus = () => {
     this.FB.getLoginStatus(this.facebookLoginHandler);
   }
 
-  facebookLoginHandler = response => {
+  facebookLoginHandler = (response) => {
     if (response.status === 'connected'){
       this.FB.api('/me', userData => {
-        let result = {
-          ...response,
+        let result = Object.assign({}, response, {
           user: userData
-        };
+        });
         this.props.onLogin(true,result);
       });
     } else {
@@ -58,16 +59,16 @@ class Login extends React.Component {
 
 //below taken from the officil facebook instructions 
 
-FB.login((response) => {
-  if (response.authResponse) {
-   console.log('Welcome!  Fetching your information.... ');
-   FB.api('/me', function(response) {
-     console.log('Good to see you, ' + response.name + '.');
-   });
-  } else {
-   console.log('User cancelled login or did not fully authorize.');
-  }
-});
+// FB.login((response) => {
+//   if (response.authResponse) {
+//    console.log('Welcome!  Fetching your information.... ');
+//    FB.api('/me', function(response) {
+//      console.log('Good to see you, ' + response.name + '.');
+//    });
+//   } else {
+//    console.log('User cancelled login or did not fully authorize.');
+//   }
+// });
 
 // //'Taken from the sample code above, here's some of the code that's run during page load to check a person's login status:'
 // FB.getLoginStatus(function(response) {
