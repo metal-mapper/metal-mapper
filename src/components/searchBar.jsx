@@ -1,26 +1,30 @@
-import React from 'react'
+// This is the main component for the searchBar.
+// This has not been tested if it works because master is not working for me -KD
+
+import React from 'react';
+
+// Import routing components
+import { Router, Route } from 'react-router';
 
 class SearchBar extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = {value: ''};
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
   
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-  
-    handleChange(event) {
-      this.setState({value: event.target.value});
-    }
-  
-    handleSubmit(event) {
-      alert('A location has been submitted: ' + this.state.value);
+  handleChange(event) {
+    this.setState( {value: event.target.value} );
+  } 
+  handleSubmit(event) {
+    alert('A location has been submitted: ' + this.state.value);
       event.preventDefault();
-    }
-  
-    render() {
-      return (
-        <form onSubmit={this.handleSubmit}>
+  }
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
           <label>
             Enter your nearest city:
             <input type="text" value={this.state.value} onChange={this.handleChange} />
@@ -31,9 +35,9 @@ class SearchBar extends React.Component {
     }
   }
   
-  ReactDOM.render(
-    <SearchBar />,
-    document.getElementById('root')
-  );
+//   ReactDOM.render(
+//     <SearchBar />,
+//     document.getElementById('root')
+//   );
 
 export default SearchBar;
