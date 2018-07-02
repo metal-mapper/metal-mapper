@@ -3,9 +3,6 @@
 
 import React from 'react';
 
-// Import routing components
-import { Router, Route } from 'react-router';
-
 class SearchBar extends React.Component {
     constructor(props) {
     super(props);
