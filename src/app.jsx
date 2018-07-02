@@ -2,6 +2,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Login from './components/login';
 import SearchBar from './components/searchBar';
+import Venue from './components/venue';
+
 
 class Home extends React.Component {
   render() {
@@ -62,6 +64,7 @@ class App extends React.Component {
         <SearchBar />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/venue" exact component={Venue} />
           <Route path="/venues" component={Venues} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
