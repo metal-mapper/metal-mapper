@@ -1,5 +1,26 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Login from './components/login';
+import SearchBar from './components/searchBar';
+
+class Home extends React.Component {
+  render() {
+    return (<h1>Home Page</h1>);
+  }
+}
+
+// More components
+class Venues extends React.Component {
+  render() {
+    return (<h1>Venues</h1>);
+  }
+}
+
+class Register extends React.Component {
+  render() {
+    return (<h1>Register</h1>);
+  }
+}
 
 //This TopNav and MiddleNav needs to be turned into a component within navBar.jsx NOT HERE
 class App extends React.Component {
@@ -38,7 +59,13 @@ class App extends React.Component {
           <h2>Metal Mapper Guide</h2>
           <p>Search below for your perfect Metal Mapper trip:</p>
         </div>
-        <Login onLogin = {this.onFacebookLogin}/>
+        <SearchBar />
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/venues" component={Venues} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
+        </Switch>
       </div>
     )
   };
