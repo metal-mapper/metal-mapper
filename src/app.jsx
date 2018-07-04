@@ -4,7 +4,6 @@ import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Redirect } from 'react-router-dom'
 import MyHomeComponent from './MyHomeComponent'
 
-//This TopNav and MiddleNav needs to be turned into a component within navBar.jsx NOT HERE
 class App extends React.Component {
 
   state = {
