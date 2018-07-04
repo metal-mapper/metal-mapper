@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Typography from '@material-ui/core/Typography';
+import Icon from '@material-ui/core/Icon';
 
 class Venue extends Component {
   constructor() {
@@ -17,19 +19,30 @@ class Venue extends Component {
     return (
       <div className="venueCard">
         <div className="venueName">
+          <Typography variant="display2" gutterBottom>
+            <Icon style={{ marginTop: 40, fontSize: 28 }}>recent_actors</Icon>
           <span>{this.state.venueName}</span>
+          </Typography>
         </div>
         <div className="venueType">
-          <span>{this.state.venueType}</span>
+          <Typography variant="display1">
+            <span>Tags: {this.state.venueType}</span>
+          </Typography>
         </div>
         <div className="venueRating">
-          <span>{this.state.venueRating}</span>
+          <Typography variant="display1">
+            <span>Rating: {this.state.venueRating}</span>
+          </Typography>
         </div>
         <div className="venueAddress">
-          <span>{this.state.venueAddress}</span>
+          <Typography variant="display1">
+            <span>Address: {this.state.venueAddress}</span>
+          </Typography>
         </div>
         <div className="venuePriceRange">
-          <span>{this.state.venuePriceRange}</span>
+          <Typography variant="display1" gutterBottom>
+            <span>Price: {this.state.venuePriceRange}</span>
+          </Typography>
         </div>
       </div>
     );
