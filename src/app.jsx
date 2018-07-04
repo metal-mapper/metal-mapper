@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Login from './components/login';
-import SearchBar from './components/searchBar';
-import Venue from './components/venue';
+import SearchBar from './components/SearchBar';
+import Venue from './components/Venue';
 
 
 class Home extends React.Component {
