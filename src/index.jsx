@@ -6,4 +6,10 @@ import App from './app';
 
 import './styles/index.css';
 
-render(<Router><App /></Router>, document.getElementById('root'));
+const app = (
+  <Router>
+    <App />
+  </Router>
+);
+
+render(app, document.getElementById('root'));

@@ -24,7 +24,7 @@
     "prop-types": "^15.6.1",
     "raf": "^3.4.0",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
@@ -46,8 +46,9 @@
     "node-sass": "^4.9.0",
     "react-test-renderer": "^16.3.2",
     "sass-loader": "^7.0.1",
+    "serve": "^9.1.0",
     "style-loader": "^0.21.0",
-    "webpack": "^4.6.0",
+    "webpack": "^4.14.0",
     "webpack-cli": "^2.0.15",
     "webpack-dev-server": "^3.1.3"
   },
