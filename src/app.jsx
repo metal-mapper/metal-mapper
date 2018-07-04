@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from './components/login';
+import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Redirect } from 'react-router-dom'
 import MyHomeComponent from './MyHomeComponent'
 
@@ -23,15 +24,12 @@ class App extends React.Component {
               alert('facebook login error');
             }
           }
-          // make request to FB for user status
-          // with their check login status method
-      
-          // if logged in return true
-          // else return false
         }
       
         render () {
           return (
+            <div>
+              <navBar>
             <Router>
               {/* This route renders MyHomeComponent if logged in
               Or redirects to the /login route otherwise */}
@@ -53,6 +51,7 @@ class App extends React.Component {
                 render={() => <LoginPage />}
               />
             </Router>
+            </div>
           )
         }
       }
