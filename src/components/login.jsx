@@ -35,9 +35,6 @@ class Login extends React.Component {
     }
   }
 
-  //this.props.login doesn't exist so I need to 
-
-
   //   if (!this.FB) return;
   //   this.FB.getLoginStatus(response => {
   //     if (response.status === 'connected') {
