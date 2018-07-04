@@ -2,7 +2,7 @@ import React from 'react';
 
 class Login extends React.Component {
   componentDidMount() {
-    debugger
+    // debugger
     document.addEventListener('FBObjectReady', this.initializeFacebookLogIn);
   }
 
@@ -28,6 +28,7 @@ class Login extends React.Component {
           user: userData
         });
         console.log (result)
+        //this.props.onloginresyult
         // this.props.onLogin(true,result);
       });
     } else {
@@ -45,10 +46,10 @@ class Login extends React.Component {
   //   })
   // }
   facebookLogin = () => {
-    FB.login((response) => {
+    this.FB.login((response) => {
       if (response.authResponse) {
       console.log('Welcome!  Fetching your information.... ');
-      FB.api('/me', function(response) {
+      this.FB.api('/me', function(response) {
         console.log('Good to see you, ' + response.name + '.');
       });
       } else {
