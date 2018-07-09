@@ -5,11 +5,7 @@ body {
 
 .topnav {
   overflow: hidden;
-<<<<<<< HEAD
-  background-color: rgb(146, 1, 1);
-=======
   background-color:orange;
->>>>>>> master
 }
 
 .topnav a {
@@ -22,14 +18,9 @@ body {
 }
 
 .topnav a:hover {
-<<<<<<< HEAD
-  background-color: #ddd;
-  color: rgb(146, 1, 1);
-=======
   background-color: burlywood;
   color: yellow;
   text-decoration-style: underline
->>>>>>> master
 }
 
 .topnav a.active {
@@ -39,11 +30,7 @@ body {
 
 .middlenav {
   overflow: hidden;
-<<<<<<< HEAD
-  background-color: rgb(146, 1, 1);
-=======
   background-color: rgba(255, 166, 0, 0.89);
->>>>>>> master
 }
 
 

@@ -11,8 +11,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 const styles = {
   card: {
-    minWidth: 275,
-    maxWidth: 345,
+    minWidth: 200,
   },
   title: {
     marginBottom: 16,
@@ -29,7 +28,9 @@ const styles = {
 };
 
 const Venue = props => (
-  <Card>
+  <Card
+    style={{ width: 200 }}
+  >
     <CardMedia
       image="https://static.vinepair.com/wp-content/uploads/2017/05/pub-internal.jpg"
       title="Contemplative Reptile"
