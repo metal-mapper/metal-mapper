@@ -1,6 +1,7 @@
 import React from 'react';
+import LogIn from './components/login';
+// import NavBar from './components/NavBar'; 
 import { Switch, Route } from 'react-router-dom';
-import Login from './components/Login';
 import SearchBar from './components/SearchBar';
 import Venue from './components/Venue';
 
@@ -24,27 +25,45 @@ class Register extends React.Component {
   }
 }
 
-//This TopNav and MiddleNav needs to be turned into a component within navBar.jsx NOT HERE
 class App extends React.Component {
 
   state = {
-    username: null
+    user: null
   };
 
-  //set up babel with react project, which will do - reads my code and translates it into readible code, will translate it inoto older synax so older software/browsers will understand it
+  //state .user is null 
 
-  onFacebookLogin = (loginStatus, resultObject) => {
-    if (loginStatus === true) {
-      this.setState({
-        username: resultObject.user.name
-      });
-    } else {
-      alert('facebook login error');
-    }
-  }
+  //write a handler function 'handleLogIn' here - to set the state of the user 'this.setstate'
 
-  render() {
+  // probably don't need this
+  // checkLoggedIn = () => {
+  //   onFacebookLogin = (loginStatus, resultObject) => {
+  //     if (loginStatus === true) {
+  //       this.setState({
+  //         user: resultObject.user
+  //       });
+  //     } else {
+  //       alert('facebook login error');
+  //     }
+  //   }
+  // }
+
+  //conditional rendering 
+  render () {
     return (
+      <React.Fragment>
+        {/* <NavBar /> */}
+        {
+          !this.state.user ?
+            <LogIn /> :
+            <Switch>
+              {/* <Route path="/" component={Home} /> */}
+              {/* all routes */}
+            </Switch>
+        }
+      </React.Fragment>
+    );
+  }
       <div>
         <div className="topnav">
           <a className="active" href="#home">Home</a>
@@ -73,6 +92,5 @@ class App extends React.Component {
     )
   };
 }
-
 
 export default App;
