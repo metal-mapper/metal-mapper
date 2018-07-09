@@ -2,7 +2,7 @@ import React from 'react';
 import LogIn from './components/Login';
 // import NavBar from './components/NavBar'; 
 import { Switch, Route } from 'react-router-dom';
-import SearchBar from './components/SearchBar';
+// import SearchBar from './components/SearchBar';
 import Venue from './components/Venue';
 
 // More components
@@ -17,8 +17,6 @@ class App extends React.Component {
   state = {
     user: null
   };
-
-  //state .user is null 
 
   handleSetUserState(user) {
     this.setState({ user });
@@ -44,5 +42,6 @@ class App extends React.Component {
       </React.Fragment>
     );
   }
+}
 
 export default App;
