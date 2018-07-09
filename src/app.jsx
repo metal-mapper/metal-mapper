@@ -57,22 +57,33 @@ class App extends React.Component {
           <a href="#LogIn">Log In</a>
         </div>
 
-        <div style={{ paddingLeft: '16px' }}>
+        {/* <div style={{ paddingLeft: '16px' }}> */}
+        <div className="middleimage">
           <h2>Metal Mapper Guide</h2>
-          <p>Search below for your perfect Metal Mapper trip:</p>
+          <p>Discover your perfect Metal Mapper experience!</p>
         </div>
-        <SearchBar />
-        <Switch>
+
+        <div className="searchbar"> 
+        <h2>Enter your nearest city</h2>
+        
+        <SearchBar /> </div>
+
+        <div className="footer">
+        <a href="#About">About</a>
+        <a href="#TermsandConditions">Terms and Conditions</a>
+        <a href="#Login">login</a>
+        <a href="Register">Register</a>
+        </div>
+    </div>
+    )
+  };
+}
+export default App;
+
+{/* /* <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/venue" exact component={Venue} />
           <Route path="/venues" component={Venues} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
-        </Switch>
-      </div>
-    )
-  };
-}
-
-
-export default App;
+        </Switch>   */ }
