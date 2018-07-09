@@ -2,6 +2,7 @@ import React from 'react';
 
 class Login extends React.Component {
   componentDidMount() {
+    // debugger
     document.addEventListener('FBObjectReady', this.initializeFacebookLogIn);
   }
 
@@ -26,30 +27,44 @@ class Login extends React.Component {
         let result = Object.assign({}, response, {
           user: userData
         });
-        this.props.onLogin(true,result);
+        console.log (result)
+        //this.props.onloginresyult
+        // this.props.onLogin(true,result);
       });
     } else {
-      this.props.onLogin(false);
+      // this.props.onLogin(false);
     }
   }
 
+  //   if (!this.FB) return;
+  //   this.FB.getLoginStatus(response => {
+  //     if (response.status === 'connected') {
+  //       this.facebookLoginHandler(response);
+  //     } else {
+  //       this.FB.login(this.facebookLoginHandler, {scope: 'public_profile,user_location'});
+  //     }
+  //   })
+  // }
   facebookLogin = () => {
-    if (!this.FB) return;
-
-    this.FB.getLoginStatus(response => {
-      if (response.status === 'connected') {
-        this.facebookLoginHandler(response);
+    this.FB.login((response) => {
+      if (response.authResponse) {
+      console.log('Welcome!  Fetching your information.... ');
+      this.FB.api('/me', function(response) {
+        console.log('Good to see you, ' + response.name + '.');
+      });
       } else {
-        this.FB.login(this.facebookLoginHandler, {scope: 'public_profile'});
+      console.log('User cancelled login or did not fully authorize.');
       }
-    })
+    });
   }
 
+//how to make facbeook graph requests, and which end point i'd need to hit in order to get back user location - which will be on the backend
+//how to get access to this api to make the request for the data
   render() {
     return (
       <div>
         <button
-          onClick={this.facebookLogin}>
+          onClick= { () => this.facebookLogin()}>
           Log in with Facebook
         </button>
       </div>
@@ -57,19 +72,11 @@ class Login extends React.Component {
   }
 }
 
-//below taken from the officil facebook instructions 
-// hello
+// fb replaced '/me' with the graph based entitey (graph nodes) 
 
-// FB.login((response) => {
-//   if (response.authResponse) {
-//    console.log('Welcome!  Fetching your information.... ');
-//    FB.api('/me', function(response) {
-//      console.log('Good to see you, ' + response.name + '.');
-//    });
-//   } else {
-//    console.log('User cancelled login or did not fully authorize.');
-//   }
-// });
+//below taken from the officil facebook instructions 
+
+
 
 // //'Taken from the sample code above, here's some of the code that's run during page load to check a person's login status:'
 // FB.getLoginStatus(function(response) {
@@ -77,17 +84,6 @@ class Login extends React.Component {
 // });
 
 // //'The response object that's provided to your callback contains a number of fields:'
-
-// //maybe put this in app and on component did mount
-// {
-//   status: 'connected',
-//   authResponse: {
-//       accessToken: '...',
-//       expiresIn:'...',
-//       signedRequest:'...',
-//       userID:'...'
-//   }
-// }
 
 // Login.propTypes = {
 //   onLogin: PropTypes.func.isRequired,
