@@ -2,7 +2,6 @@ import React from 'react';
 
 class Login extends React.Component {
   componentDidMount() {
-    // debugger
     document.addEventListener('FBObjectReady', this.initializeFacebookLogIn);
   }
 
@@ -15,8 +14,6 @@ class Login extends React.Component {
     this.checkLoginStatus();
   }
 
-  //adding constructor function here (acts to set initial values) a method called constructor then you have this.state=
-
   checkLoginStatus = () => {
     this.FB.getLoginStatus(this.facebookLoginHandler);
   }
@@ -24,12 +21,7 @@ class Login extends React.Component {
   facebookLoginHandler = (response) => {
     if (response.status === 'connected'){
       this.FB.api('/me', userData => {
-        let result = Object.assign({}, response, {
-          user: userData
-        });
-        console.log (result)
-        //this.props.onloginresyult
-        // this.props.onLogin(true,result);
+        this.props.onSetUserState(userData)
       });
     } else {
       // this.props.onLogin(false);
@@ -45,6 +37,7 @@ class Login extends React.Component {
   //     }
   //   })
   // }
+
   facebookLogin = () => {
     this.FB.login((response) => {
       if (response.authResponse) {
@@ -73,15 +66,6 @@ class Login extends React.Component {
 }
 
 // fb replaced '/me' with the graph based entitey (graph nodes) 
-
-//below taken from the officil facebook instructions 
-
-
-
-// //'Taken from the sample code above, here's some of the code that's run during page load to check a person's login status:'
-// FB.getLoginStatus(function(response) {
-//   statusChangeCallback(response);
-// });
 
 // //'The response object that's provided to your callback contains a number of fields:'
 
