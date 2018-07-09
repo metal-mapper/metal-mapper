@@ -7,20 +7,20 @@ import Venue from './components/Venue';
 
 class Home extends React.Component {
   render() {
-    return (<h1>Home Page</h1>);
+    return (<h1></h1>);
   }
 }
 
 // More components
 class Venues extends React.Component {
   render() {
-    return (<h1>Venues</h1>);
+    return (<h1></h1>);
   }
 }
 
 class Register extends React.Component {
   render() {
-    return (<h1>Register</h1>);
+    return (<h1>]</h1>);
   }
 }
 
@@ -45,24 +45,23 @@ class App extends React.Component {
 
   render() {
     return (
+      // this is the code for navigation bar 
       <div>
         <div className="topnav">
           <a className="active" href="#home">Home</a>
           <a href="#BrowseLocation">Browse Locations</a>
           <a href="#AddLocation">Add Location</a>
-        </div>
 
         <div className="middlenav">
           <a href="#Register">Register</a>
           <a href="#LogIn">Log In</a>
         </div>
 
-<div className="searchbar"> 
-        <h2>Enter your nearest city</h2>
+        <div className="searchbar"> 
+          <h2>Enter your nearest city</h2>
         
         <SearchBar /> </div>
-        
-        {/* <div style={{ paddingLeft: '16px' }}> */}
+      
         <div className="middleimage">
           <h2>Metal Mapper Guide</h2>
           <p>Discover your perfect Metal Mapper experience!</p>
@@ -76,16 +75,9 @@ class App extends React.Component {
         <a href="#Login">login</a>
         <a href="Register">Register</a>
         </div> */}
+      </div>
     </div>
     )
   };
 }
 export default App;
-
-{/* /* <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/venue" exact component={Venue} />
-          <Route path="/venues" component={Venues} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
-        </Switch>   */ }
