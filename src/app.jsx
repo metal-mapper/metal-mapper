@@ -5,6 +5,8 @@ import SearchBar from './components/SearchBar';
 import Venue from './components/Venue';
 
 
+// Not sure that these components are supposed to be 
+
 class Home extends React.Component {
   render() {
     return (<h1>Home Page</h1>);
