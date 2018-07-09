@@ -74,10 +74,6 @@ class Login extends React.Component {
 
 // fb replaced '/me' with the graph based entitey (graph nodes) 
 
-//below taken from the officil facebook instructions 
-
-
-
 // //'Taken from the sample code above, here's some of the code that's run during page load to check a person's login status:'
 // FB.getLoginStatus(function(response) {
 //   statusChangeCallback(response);

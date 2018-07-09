@@ -78,23 +78,25 @@ class App extends React.Component {
           <a href="#LogIn">Log In</a>
         </div>
 
+<div className="searchbar"> 
+        <h2>Enter your nearest city</h2>
+        
+        <SearchBar /> </div>
+        
         {/* <div style={{ paddingLeft: '16px' }}> */}
         <div className="middleimage">
           <h2>Metal Mapper Guide</h2>
           <p>Discover your perfect Metal Mapper experience!</p>
         </div>
 
-        <div className="searchbar"> 
-        <h2>Enter your nearest city</h2>
         
-        <SearchBar /> </div>
 
-        <div className="footer">
+        {/* <div className="footer">
         <a href="#About">About</a>
         <a href="#TermsandConditions">Terms and Conditions</a>
         <a href="#Login">login</a>
         <a href="Register">Register</a>
-        </div>
+        </div> */}
     </div>
     )
   };
@@ -107,5 +109,4 @@ export default App;
           <Route path="/venues" component={Venues} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
-
-*/ }
+        </Switch>   */ }
