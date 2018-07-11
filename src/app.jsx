@@ -1,10 +1,10 @@
 import React from 'react';
 import LogIn from './components/Login';
-import NavBar from './components/NavBar'; 
+// import NavBar from './components/NavBar'; 
 import { Switch, Route } from 'react-router-dom';
 // import SearchBar from './components/SearchBar';
 import Venue from './components/Venue';
-import AddVenue from './components/AddVenue';
+// import AddVenue from './components/AddVenue';
 
 // More components
 class Venues extends React.Component {
@@ -28,7 +28,7 @@ class App extends React.Component {
 const user = this.state.user
     return (
       <React.Fragment>
-        <NavBar user= {user} /> 
+        {/* <NavBar user= {user} />  */}
         {
           !this.state.user ?
             <LogIn /> :
@@ -37,7 +37,7 @@ const user = this.state.user
               <Route path="/" exact render={Home} />
               <Route path="/venue" exact render= { () => <Venue user= {user}/> }/>
               <Route path="/venues" render= { () => <Venues user= {user}/> } />
-              <Route path="/addvenue" render= { () => <AddVenue user= {user}/>} />
+              {/* <Route path="/addvenue" render= { () => <AddVenue user= {user}/>} /> */}
             </Switch>
         }
       </React.Fragment>
