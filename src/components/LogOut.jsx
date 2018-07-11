@@ -4,9 +4,18 @@ class LogOut extends React.Component {
 
   facebookLogOut = () => {
     FB.logout(function(response) => {
+      this.setState({
+        
+      })
     });
   }
 
+}
+
+loggedOut() {
+  this.setState({
+      loggedStatus: false,
+  })
 }
 
 render() {
