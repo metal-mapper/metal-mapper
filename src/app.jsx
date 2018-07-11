@@ -1,9 +1,10 @@
 import React from 'react';
 import LogIn from './components/Login';
-// import NavBar from './components/NavBar'; 
+import NavBar from './components/NavBar'; 
 import { Switch, Route } from 'react-router-dom';
 // import SearchBar from './components/SearchBar';
 import Venue from './components/Venue';
+import AddVenue from './components/AddVenue';
 
 // More components
 class Venues extends React.Component {
