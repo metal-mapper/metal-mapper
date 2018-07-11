@@ -24,24 +24,26 @@ class App extends React.Component {
 
   //conditional rendering 
   render () {
+const user = this.state.user
     return (
       <React.Fragment>
-        {/* <NavBar /> */}
+        <NavBar user= {user} /> 
         {
           !this.state.user ?
             <LogIn /> :
             <Switch>
               {/* all routes */}
-              <Route path="/" exact component={Home} />
-              <Route path="/venue" exact component={Venue} />
-              <Route path="/venues" component={Venues} />
-              <Route path="/register" component={Register} />
-              <Route path="/login" render={ () => <LogIn  onSetUserState= { this.handleSetUserState } />} />
+              <Route path="/" exact render={Home} />
+              <Route path="/venue" exact render= { () => <Venue user= {user}/> }/>
+              <Route path="/venues" render= { () => <Venues user= {user}/> } />
+              <Route path="/addvenue" render= { () => <AddVenue user= {user}/>} />
             </Switch>
         }
       </React.Fragment>
     );
   }
 }
+
+// passs your user down to each component rendered by the route as prop
 
 export default App;
