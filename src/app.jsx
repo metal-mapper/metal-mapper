@@ -6,13 +6,6 @@ import { Switch, Route } from 'react-router-dom';
 import Venue from './components/Venue';
 // import AddVenue from './components/AddVenue';
 
-// More components
-class Venues extends React.Component {
-  render() {
-    return (<h1>Venues</h1>);
-  }
-}
-
 class App extends React.Component {
 
   state = {
