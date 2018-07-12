@@ -45,7 +45,7 @@ class App extends React.Component {
 
   render() {
     return (
-      // this is the code for navigation bar 
+      // This is the code for the navigation bar and layout of rendered HOMEPAGE. Do not delete, until agreed with KD
       <div>
         <div className="topnav">
           <a className="active" href="#home">Home</a>
@@ -68,8 +68,10 @@ class App extends React.Component {
         </div>
 
         
-
-        {/* <div className="footer">
+        {/* 
+        This is the footer element that I have not had chance to work on yet - KD
+        
+        <div className="footer">
         <a href="#About">About</a>
         <a href="#TermsandConditions">Terms and Conditions</a>
         <a href="#Login">login</a>
