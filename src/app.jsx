@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import Login from './components/Login';
 import SearchBar from './components/SearchBar';
 import Venue from './components/Venue';
+import NavBar from './components/navBar';
 
 
 class Home extends React.Component {
@@ -47,15 +48,7 @@ class App extends React.Component {
     return (
       // This is the code for the navigation bar and layout of rendered HOMEPAGE. Do not delete, until agreed with KD
       <div>
-        <div className="topnav">
-          <a className="active" href="#home">Home</a>
-          <a href="#BrowseLocation">Browse Locations</a>
-          <a href="#AddLocation">Add Location</a>
-
-        <div className="middlenav">
-          <a href="#Register">Register</a>
-          <a href="#LogIn">Log In</a>
-        </div>
+        <NavBar />
 
         <div className="searchbar"> 
           <h2>Enter your nearest city</h2>
@@ -78,7 +71,6 @@ class App extends React.Component {
         <a href="Register">Register</a>
         </div> */}
       </div>
-    </div>
     )
   };
 }
