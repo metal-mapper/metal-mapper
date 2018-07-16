@@ -2,8 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { FormErrors } from './FormErrors';
-
-import './styles/addVenue.scss';
+import '../styles/addVenue.scss';
 
 class AddVenue extends React.Component {
   constructor(props) {
@@ -46,7 +45,7 @@ class AddVenue extends React.Component {
   validateField(fieldName, value) {
     const fieldValidationErrors = this.state.formErrors;
     let venueNameValid = this.state.venueNameValid;
-    const venueTypeSelectValid = this.state.venueTypeSelectValid;
+    let venueTypeSelectValid = this.state.venueTypeSelectValid;
     let priceRatingValid = this.state.priceRatingValid;
     let addressValid = this.state.addressValid;
     let contactWebsiteValid = this.state.contactWebsiteValid;
