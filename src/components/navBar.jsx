@@ -1,13 +1,55 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-class NavBar extends React.Component {
+const Home = () => (
+  <div>
+    <h2>Home Page</h2>
+  </div>
+);
 
-  // render() {
-  //   return(
-  //     <div>
-  //       </div>
-  //   );
-  // }
-}
+const BrowseLocation = () => (
+  <div>
+    <h2>Browse</h2>
+  </div>
+);
+
+const AddLocation = () => (
+  <div>
+    <h2>Location</h2>
+  </div>
+);
+
+const LogIn = () => (
+  <div>
+    <LogIn />
+    <h2>Login page</h2>
+  </div>
+);
+
+const Register = () => (
+  <div>
+    <h2>Register</h2>
+  </div>
+);
+
+const NavBar = () => (
+  <Router>
+    <div className="topnav">
+      <p> <Link to="/">Home</Link> </p>
+      <p> <Link to="/BrowseLocation">Browse Locations</Link> </p>
+      <p> <Link to="/AddLocation">Add Location</Link> </p>
+      <p> <Link to="/LogIn">Log In</Link> </p>
+      <p> <Link to="/Register">Register</Link></p>
+
+      <Route exact path="/" component={Home} />
+      <Route path="/browselocation" component={BrowseLocation} />
+      <Route path="/addlocation" component={AddLocation} />
+      <Route path="/login" component={LogIn} />
+      <Route path="/register" component={Register} />
+
+    </div>
+  </Router>
+
+);
 
 export default NavBar;

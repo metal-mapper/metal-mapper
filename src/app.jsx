@@ -1,9 +1,9 @@
 import React from 'react';
 import LogIn from './components/Login';
-// import NavBar from './components/NavBar'; 
 import { Switch, Route } from 'react-router-dom';
 // import SearchBar from './components/SearchBar';
 import Venue from './components/Venue';
+import NavBar from './components/navBar';
 // import AddVenue from './components/AddVenue';
 
 
@@ -43,15 +43,7 @@ const user = this.state.user
     return (
       // This is the code for the navigation bar and layout of rendered HOMEPAGE. Do not delete, until agreed with KD
       <div>
-        <div className="topnav">
-          <a className="active" href="#home">Home</a>
-          <a href="#BrowseLocation">Browse Locations</a>
-          <a href="#AddLocation">Add Location</a>
-
-        <div className="middlenav">
-          <a href="#Register">Register</a>
-          <a href="#LogIn">Log In</a>
-        </div>
+        <NavBar />
 
         <div className="searchbar"> 
           <h2>Enter your nearest city</h2>
@@ -74,7 +66,6 @@ const user = this.state.user
         <a href="Register">Register</a>
         </div> */}
       </div>
-    </div>
     )
   };
 }
