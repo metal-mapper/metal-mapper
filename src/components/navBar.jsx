@@ -26,12 +26,6 @@ const LogIn = () => (
   </div>
 );
 
-const Register = () => (
-  <div>
-    <h2>Register</h2>
-  </div>
-);
-
 const NavBar = () => (
   <Router>
     <div className="topnav">
