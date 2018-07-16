@@ -5,11 +5,11 @@ import { FormErrors } from './FormErrors';
 
 import './styles/addVenue.scss';
 
-class AddProperty extends React.Component {
+class AddVenue extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      venueTitle: '',
+      venueName: '',
       venueTypeSelect: '',
       priceRating: '',
       address: '',
@@ -21,7 +21,7 @@ class AddProperty extends React.Component {
         address: '',
         contactWebsite: '',
       },
-      venueTitleValid: false,
+      venueNameValid: false,
       venueTypeSelectValid: false,
       priceRatingValid: false,
       addressValid: false,
@@ -46,7 +46,7 @@ class AddProperty extends React.Component {
   validateField(fieldName, value) {
     const fieldValidationErrors = this.state.formErrors;
     let venueNameValid = this.state.venueNameValid;
-    let venueTypeSelectValid = this.state.venueTypeSelectValid;
+    const venueTypeSelectValid = this.state.venueTypeSelectValid;
     let priceRatingValid = this.state.priceRatingValid;
     let addressValid = this.state.addressValid;
     let contactWebsiteValid = this.state.contactWebsiteValid;
@@ -64,9 +64,9 @@ class AddProperty extends React.Component {
         priceRatingValid = (value >= 1) && (value <= 5);
         fieldValidationErrors.priceRating = priceRatingValid ? '' : ' Please enter a price rating between 1 and 5';
         break;
-      case 'citySelect':
-        citySelectValid = value !== 'none';
-        fieldValidationErrors.citySelect = citySelectValid ? '' : ' Please select a city';
+      case 'address':
+        addressValid = value.length >= 0;
+        fieldValidationErrors.address = addressValid ? '' : 'Address must be longer than 0 characters';
         break;
       case 'contactWebsite':
         contactWebsiteValid = value.length >= 0;
@@ -97,20 +97,18 @@ class AddProperty extends React.Component {
   }
 
   errorClass(error) {
-    return(error.length === 0 ? '' : 'has-error');
+    return (error.length === 0 ? '' : 'has-error');
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
-    axios.post('http://localhost:3000/api/v1/PropertyListing', {
-      title: this.state.propertyTitle,
-      type: this.state.propertyTypeSelect,
-      bedrooms: this.state.bedroomInput,
-      bathrooms: this.state.bathroomInput,
-      price: this.state.price,
-      city: this.state.citySelect,
-      email: this.state.email,
+    axios.post('http://localhost:3000/api/v1/VenueListing', {
+      venueName: this.state.venueName,
+      venueType: this.state.venueTypeSelect,
+      priceRating: this.state.priceRating,
+      addrueess: this.state.address,
+      contactWebsite: this.state.contactWebsite,
     })
       .then(() => {
         this.props.history.push('/');
@@ -122,69 +120,103 @@ class AddProperty extends React.Component {
   render() {
     return (
       <div className="add-venue-container">
-          <form onSubmit={this.handleSubmit}>
-            <div className="form-group row">
-              <label htmlFor="venueName" className="col-sm-2 col-form-label">Venue Name</label>
-              <div className="col-sm-10">
-                <input 
-                  type="text" 
-                  className={`form-control ${this.errorClass(this.state.formErrors.venueName)}`}
-                  id="venueName" 
-                  placeholder="Venue name" 
-                  value={this.state.venueName}
-                  />
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group row">
+            <label htmlFor="venueName" className="col-sm-2 col-form-label">Venue Name</label>
+            <div className="col-sm-10">
+              <input
+                type="text"
+                className={`form-control ${this.errorClass(this.state.formErrors.venueName)}`}
+                id="venueName"
+                placeholder="Venue name"
+                value={this.state.venueName}
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="venueTypeSelect" className="col-sm-2 col-form-label">Type</label>
+            <div className="col-sm-10">
+              <select
+                className="form-control"
+                id="venueTypeSelect"
+                value={this.state.venueTypeSelect}
+                onChange={this.handleChange}
+              >
+                <option value="none">Select one option</option>
+                <option value="Pub">Pub</option>
+                <option value="Club">Club</option>
+                <option value="Gig Venue">Gig-venue</option>
+                <option value="Record Shop">Record shop</option>
+              </select>
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="price" className="col-sm-2 col-form-label">Price Rating</label>
+            <div className="col-sm-10">
+              <input
+                type="number"
+                className={`form-control ${this.errorClass(this.state.formErrors.priceRating)}`}
+                id="price"
+                placeholder="Price Rating"
+                value={this.state.citySelect}
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="address" className="col-sm-2 col-form-label">Address</label>
+            <div className="col-sm-10">
+              <input
+                type="text"
+                className={`form-control ${this.errorClass(this.state.formErrors.address)}`}
+                id="address"
+                placeholder="Address"
+                value={this.state.address}
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div className="form-group row">
+            <label htmlFor="contactWebsite" className="col-sm-2 col-form-label">Contact Website</label>
+            <div className="col-sm-10">
+              <input
+                type="text"
+                className={`form-control ${this.errorClass(this.state.formErrors.contactWebsite)}`}
+                id="contactWebsite"
+                placeholder="Contact Website"
+                value={this.state.contactWebsite}
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div className="form-group row">
+            <div className="col-sm-10">
+              <button disabled={!this.state.formValid} type="submit" className="btn btn-primary">Add Venue Listing</button>
+            </div>
+          </div>
+          {
+            !this.state.formValid &&
+              <div className="alert alert-warning" role="alert">
+                <FormErrors formErrors={this.state.formErrors} />
               </div>
-            </div>
-            <div className="form-group row">
-              <label htmlFor="venueTypeSelect" className="col-sm-2 col-form-label">Type</label>
-              <div className="col-sm-10">
-                <select
-                  className="form-control"
-                  id="venueTypeSelect"
-                >
-                  <option value="none">Select one option</option>
-                  <option value="Pub">Pub</option>
-                  <option value="Club">Club</option>
-                  <option value="Gig Venue">Gig-venue</option>
-                  <option value="Record Shop">Record shop</option>
-                </select>
-              </div>
-            </div>
-            <div className="form-group row">
-              <label htmlFor="price" className="col-sm-2 col-form-label">Price Rating</label>
-              <div className="col-sm-10">
-                <input type="number" className="form-control" id="price" placeholder="Price Rating" />
-              </div>
-            </div>
-            <div className="form-group row">
-              <label htmlFor="Address" className="col-sm-2 col-form-label">Address</label>
-              <div className="col-sm-10">
-              <input type="text" className="form-control" id="price" placeholder="Address" />
-              </div>
-              </div>
-            </div>
-            <div className="form-group row">
-              <label htmlFor="website" className="col-sm-2 col-form-label">Website</label>
-              <div className="col-sm-10">
-                <input type="website" className="form-control" id="website" placeholder="Contact Website" />
-              </div>
-            </div>
-            <div className="form-group row">
-              <div className="col-sm-10">
-                <button type="submit" className="btn btn-primary">Add Listing</button>
-              </div>
-            </div>
-            <div className="alert alert-warning" role="alert">
-              Some field validation went wrong. Please provide correct data.
-            </div>
-            <div className="alert alert-danger" role="alert">
-              Sorry, something went wrong. Please try again. (API Error)
-            </div>
-            <div className="alert alert-success" role="alert">
-              Venue saved.
-            </div>
-          </form>
-        </div>
-      );
+          }
+          <div className="alert alert-danger" role="alert">
+            Sorry, something went wrong. Please try again. (API Error)
+          </div>
+          <div className="alert alert-success" role="alert">
+            Venue listing saved.
+          </div>
+        </form>
+      </div>
+    );
+  }
+}
+
+AddVenue.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+};
 
 export default AddVenue;
