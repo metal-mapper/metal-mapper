@@ -47,14 +47,14 @@ class App extends React.Component {
           {!this.state.user ?
         <LogIn /> :
           <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route path="/browseVenues" component={BrowseVenues} />
-                  <Route path="/addVenue" render= { () => <AddVenue user= {user}/>} />/>
-                  <Route path="/login" component render= { () => <LogIn user= {user}/> }/>
-                  <Route path="/" exact render={Home} />
-                  <Route path="/venue" exact render= { () => <Venue user= {user}/> }/>
-                  <Route path="/venues" render= { () => <Venues user= {user}/> } />
-            </Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/browseVenues" component={BrowseVenues} />
+              <Route path="/addVenue" render= { () => <AddVenue user= {user}/>} />/>
+              <Route path="/login" component render= { () => <LogIn user= {user}/> }/>
+              <Route path="/" exact render={Home} />
+              <Route path="/venue" exact render= { () => <Venue user= {user}/> }/>
+              <Route path="/venues" render= { () => <Venues user= {user}/> } />
+          </Switch>
           }
         </div>
       )
