@@ -41,12 +41,6 @@ const NavBar = () => (
       <p> <Link to="/LogIn">Log In</Link> </p>
       <p> <Link to="/Register">Register</Link></p>
 
-      <Route exact path="/" component={Home} />
-      <Route path="/browselocation" component={BrowseLocation} />
-      <Route path="/addlocation" component={AddLocation} />
-      <Route path="/login" component={LogIn} />
-      <Route path="/register" component={Register} />
-
     </div>
   </Router>
 

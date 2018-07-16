@@ -47,47 +47,28 @@ const user = this.state.user
 
         <div className="searchbar"> 
           <h2>Enter your nearest city</h2>
-        
-        <SearchBar /> </div>
-      
+      </div>
         <div className="middleimage">
           <h2>Metal Mapper Guide</h2>
           <p>Discover your perfect Metal Mapper experience!</p>
         </div>
-
-        
-        {/* 
-        This is the footer element that I have not had chance to work on yet - KD
-        
-        <div className="footer">
-        <a href="#About">About</a>
-        <a href="#TermsandConditions">Terms and Conditions</a>
-        <a href="#Login">login</a>
-        <a href="Register">Register</a>
-        </div> */}
+        {!this.state.user ?
+       <LogIn /> :
+         <Switch>
+      
+                <Route exact path="/" component={Home} />
+                <Route path="/browseVenues" component={BrowseVenues} />
+                <Route path="/addVenue" component={AddVenue} />
+                <Route path="/login" component={LogIn} />
+                <Route path="/register" component={Register} />
+                <Route path="/" exact render={Home} />
+                <Route path="/venue" exact render= { () => <Venue user= {user}/> }/>
+                <Route path="/venues" render= { () => <Venues user= {user}/> } />
+               {/* <Route path="/addvenue" render= { () => <AddVenue user= {user}/>} /> */}
+           </Switch>
+        }
       </div>
     )
   };
 }
 export default App;
-//       <React.Fragment>
-//         {/* <NavBar user= {user} />  */}
-//         {
-//           !this.state.user ?
-//             <LogIn /> :
-//             <Switch>
-//               {/* all routes */}
-//               <Route path="/" exact render={Home} />
-//               <Route path="/venue" exact render= { () => <Venue user= {user}/> }/>
-//               <Route path="/venues" render= { () => <Venues user= {user}/> } />
-//               {/* <Route path="/addvenue" render= { () => <AddVenue user= {user}/>} /> */}
-//             </Switch>
-//         }
-//       </React.Fragment>
-//     );
-//   }
-// }
-
-// // pass your user down to each component rendered by the route as prop
-
-// export default App;
