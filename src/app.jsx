@@ -39,36 +39,35 @@ class App extends React.Component {
 
   //conditional rendering 
   render () {
-const user = this.state.user
-    return (
-      // This is the code for the navigation bar and layout of rendered HOMEPAGE. Do not delete, until agreed with KD
-      <div>
-        <NavBar />
+    const user = this.state.user
+      return (
+        // This is the code for the navigation bar and layout of rendered HOMEPAGE. Do not delete, until agreed with KD
+        <div>
+          <NavBar />
 
-        <div className="searchbar"> 
-          <h2>Enter your nearest city</h2>
-      </div>
-        <div className="middleimage">
-          <h2>Metal Mapper Guide</h2>
-          <p>Discover your perfect Metal Mapper experience!</p>
+          <div className="searchbar"> 
+            <h2>Enter your nearest city</h2>
         </div>
-        {!this.state.user ?
-       <LogIn /> :
-         <Switch>
-      
-                <Route exact path="/" component={Home} />
-                <Route path="/browseVenues" component={BrowseVenues} />
-                <Route path="/addVenue" component={AddVenue} />
-                <Route path="/login" component={LogIn} />
-                <Route path="/register" component={Register} />
-                <Route path="/" exact render={Home} />
-                <Route path="/venue" exact render= { () => <Venue user= {user}/> }/>
-                <Route path="/venues" render= { () => <Venues user= {user}/> } />
-               {/* <Route path="/addvenue" render= { () => <AddVenue user= {user}/>} /> */}
-           </Switch>
-        }
-      </div>
-    )
+          <div className="middleimage">
+            <h2>Metal Mapper Guide</h2>
+            <p>Discover your perfect Metal Mapper experience!</p>
+          </div>
+          {!this.state.user ?
+        <LogIn /> :
+          <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/browseVenues" component={BrowseVenues} />
+                  <Route path="/addVenue" component={AddVenue} />
+                  <Route path="/login" component render= { () => <LogIn user= {user}/> }/>
+                  <Route path="/register" component={Register} />
+                  <Route path="/" exact render={Home} />
+                  <Route path="/venue" exact render= { () => <Venue user= {user}/> }/>
+                  <Route path="/venues" render= { () => <Venues user= {user}/> } />
+                {/* <Route path="/addvenue" render= { () => <AddVenue user= {user}/>} /> */}
+            </Switch>
+          }
+        </div>
+      )
   };
 }
 export default App;
