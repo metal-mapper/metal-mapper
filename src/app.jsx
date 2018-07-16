@@ -1,8 +1,10 @@
 import React from 'react';
+import LogIn from './components/Login';
+// import NavBar from './components/NavBar'; 
 import { Switch, Route } from 'react-router-dom';
-import Login from './components/Login';
-import SearchBar from './components/SearchBar';
+// import SearchBar from './components/SearchBar';
 import Venue from './components/Venue';
+// import AddVenue from './components/AddVenue';
 
 
 class Home extends React.Component {
@@ -28,22 +30,16 @@ class Register extends React.Component {
 class App extends React.Component {
 
   state = {
-    username: null
+    user: null
   };
 
-  //set up babel with react project, which will do - reads my code and translates it into readible code, will translate it inoto older synax so older software/browsers will understand it
-
-  onFacebookLogin = (loginStatus, resultObject) => {
-    if (loginStatus === true) {
-      this.setState({
-        username: resultObject.user.name
-      });
-    } else {
-      alert('facebook login error');
-    }
+  handleSetUserState(user) {
+    this.setState({ user });
   }
 
-  render() {
+  //conditional rendering 
+  render () {
+const user = this.state.user
     return (
       // This is the code for the navigation bar and layout of rendered HOMEPAGE. Do not delete, until agreed with KD
       <div>
@@ -83,3 +79,24 @@ class App extends React.Component {
   };
 }
 export default App;
+//       <React.Fragment>
+//         {/* <NavBar user= {user} />  */}
+//         {
+//           !this.state.user ?
+//             <LogIn /> :
+//             <Switch>
+//               {/* all routes */}
+//               <Route path="/" exact render={Home} />
+//               <Route path="/venue" exact render= { () => <Venue user= {user}/> }/>
+//               <Route path="/venues" render= { () => <Venues user= {user}/> } />
+//               {/* <Route path="/addvenue" render= { () => <AddVenue user= {user}/>} /> */}
+//             </Switch>
+//         }
+//       </React.Fragment>
+//     );
+//   }
+// }
+
+// // pass your user down to each component rendered by the route as prop
+
+// export default App;
