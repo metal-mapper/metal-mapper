@@ -39,8 +39,6 @@ const NavBar = () => (
       <p> <Link to="/BrowseLocation">Browse Locations</Link> </p>
       <p> <Link to="/AddLocation">Add Location</Link> </p>
       <p> <Link to="/LogIn">Log In</Link> </p>
-      <p> <Link to="/Register">Register</Link></p>
-
     </div>
   </Router>
 

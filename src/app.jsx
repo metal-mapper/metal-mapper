@@ -57,13 +57,11 @@ class App extends React.Component {
           <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/browseVenues" component={BrowseVenues} />
-                  <Route path="/addVenue" component={AddVenue} />
+                  <Route path="/addVenue" render= { () => <AddVenue user= {user}/>} />/>
                   <Route path="/login" component render= { () => <LogIn user= {user}/> }/>
-                  <Route path="/register" component={Register} />
                   <Route path="/" exact render={Home} />
                   <Route path="/venue" exact render= { () => <Venue user= {user}/> }/>
                   <Route path="/venues" render= { () => <Venues user= {user}/> } />
-                {/* <Route path="/addvenue" render= { () => <AddVenue user= {user}/>} /> */}
             </Switch>
           }
         </div>

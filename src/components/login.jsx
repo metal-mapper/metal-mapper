@@ -61,9 +61,6 @@ class Login extends React.Component {
     );
   }
 }
-
-// fb replaced '/me' with the graph based entitey (graph nodes) 
-
 // 'The response object that's provided to your callback contains a number of fields:'
 
 // Login.propTypes = {
