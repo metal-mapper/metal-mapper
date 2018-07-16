@@ -162,7 +162,6 @@ class AddProperty extends React.Component {
               <input type="text" className="form-control" id="price" placeholder="Address" />
               </div>
               </div>
-            </div>
             <div className="form-group row">
               <label htmlFor="website" className="col-sm-2 col-form-label">Website</label>
               <div className="col-sm-10">
@@ -185,6 +184,8 @@ class AddProperty extends React.Component {
             </div>
           </form>
         </div>
-      );
+    );
+  }
+}
 
 export default AddVenue;
