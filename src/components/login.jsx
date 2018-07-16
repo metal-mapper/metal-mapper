@@ -9,12 +9,12 @@ class Login extends React.Component {
     document.removeEventListener('FBObjectReady', this.initializeFacebookLogIn);
   }
 
-  initializeFacebookLogIn = () => {
+  initializeFacebookLogIn () {
     this.FB = window.FB;
     this.checkLoginStatus();
   }
 
-  checkLoginStatus = () => {
+  checkLoginStatus() {
     this.FB.getLoginStatus(this.facebookLoginHandler);
   }
 
