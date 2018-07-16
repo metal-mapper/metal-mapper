@@ -42,9 +42,6 @@ class Login extends React.Component {
     });
   }
 
-//how to make facbeook graph requests, and which end point i'd need to hit in order to get back user location - which will be on the backend
-
-//how to get access to this api to make the request for the data
   render() {
     return (
       <div>
