@@ -20,13 +20,6 @@ class Venues extends React.Component {
   }
 }
 
-class Register extends React.Component {
-  render() {
-    return (<h1>]</h1>);
-  }
-}
-
-//This TopNav and MiddleNav needs to be turned into a component within navBar.jsx NOT HERE
 class App extends React.Component {
 
   state = {
@@ -44,7 +37,6 @@ class App extends React.Component {
         // This is the code for the navigation bar and layout of rendered HOMEPAGE. Do not delete, until agreed with KD
         <div>
           <NavBar />
-
           <div className="searchbar"> 
             <h2>Enter your nearest city</h2>
         </div>
