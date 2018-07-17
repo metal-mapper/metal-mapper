@@ -38,6 +38,6 @@ const NavBar = () => (
 
 );
 
-test
+//test
 
 export default NavBar;
