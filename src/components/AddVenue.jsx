@@ -3,6 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { FormErrors } from './FormErrors';
 import '../styles/addVenue.scss';
+import { withRouter } from 'react-router-dom';
 
 class AddVenue extends React.Component {
   constructor(props) {
@@ -102,7 +103,7 @@ class AddVenue extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    axios.post('http://localhost:3000/api/v1/VenueListing', {
+    axios.post('http://localhost:3001/api/v1/VenueListing', {
       venueName: this.state.venueName,
       venueType: this.state.venueTypeSelect,
       priceRating: this.state.priceRating,
@@ -125,7 +126,7 @@ class AddVenue extends React.Component {
             <div className="col-sm-10">
               <input
                 type="text"
-                className={`form-control ${this.errorClass(this.state.formErrors.venueName)}`}
+                className="form-control"
                 id="venueName"
                 placeholder="Venue name"
                 value={this.state.venueName}
@@ -155,7 +156,7 @@ class AddVenue extends React.Component {
             <div className="col-sm-10">
               <input
                 type="number"
-                className={`form-control ${this.errorClass(this.state.formErrors.priceRating)}`}
+                className="form-control"
                 id="price"
                 placeholder="Price Rating"
                 value={this.state.citySelect}
@@ -168,7 +169,7 @@ class AddVenue extends React.Component {
             <div className="col-sm-10">
               <input
                 type="text"
-                className={`form-control ${this.errorClass(this.state.formErrors.address)}`}
+                className="form-control"
                 id="address"
                 placeholder="Address"
                 value={this.state.address}
@@ -181,7 +182,7 @@ class AddVenue extends React.Component {
             <div className="col-sm-10">
               <input
                 type="text"
-                className={`form-control ${this.errorClass(this.state.formErrors.contactWebsite)}`}
+                className="form-control"
                 id="contactWebsite"
                 placeholder="Contact Website"
                 value={this.state.contactWebsite}
@@ -191,7 +192,7 @@ class AddVenue extends React.Component {
           </div>
           <div className="form-group row">
             <div className="col-sm-10">
-              <button disabled={!this.state.formValid} type="submit" className="btn btn-primary">Add Venue Listing</button>
+              <button type="submit" className="btn btn-primary">Add Venue Listing</button>
             </div>
           </div>
           {
@@ -218,4 +219,4 @@ AddVenue.propTypes = {
   }).isRequired,
 };
 
-export default AddVenue;
+export default withRouter(AddVenue);
