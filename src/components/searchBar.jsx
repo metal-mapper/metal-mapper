@@ -1,6 +1,3 @@
-// This is the main component for the searchBar.
-// This still needs some work -KD
-
 import React from 'react';
 
 class SearchBar extends React.Component {

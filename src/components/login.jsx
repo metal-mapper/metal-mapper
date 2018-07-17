@@ -44,7 +44,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="fb-login">
        { /*  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"> onClick= { () => this.facebookLogin()}>
         Log in with Facebook
         </fb:login-button>
