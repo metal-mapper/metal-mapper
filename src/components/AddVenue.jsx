@@ -126,7 +126,7 @@ class AddVenue extends React.Component {
             <div className="col-sm-10">
               <input
                 type="text"
-                className={`form-control`}
+                className="form-control"
                 id="venueName"
                 placeholder="Venue name"
                 value={this.state.venueName}
@@ -156,7 +156,7 @@ class AddVenue extends React.Component {
             <div className="col-sm-10">
               <input
                 type="number"
-                className={`form-control`}
+                className="form-control"
                 id="price"
                 placeholder="Price Rating"
                 value={this.state.citySelect}
@@ -169,7 +169,7 @@ class AddVenue extends React.Component {
             <div className="col-sm-10">
               <input
                 type="text"
-                className={`form-control`}
+                className="form-control"
                 id="address"
                 placeholder="Address"
                 value={this.state.address}
@@ -182,7 +182,7 @@ class AddVenue extends React.Component {
             <div className="col-sm-10">
               <input
                 type="text"
-                className={`form-control`}
+                className="form-control"
                 id="contactWebsite"
                 placeholder="Contact Website"
                 value={this.state.contactWebsite}
