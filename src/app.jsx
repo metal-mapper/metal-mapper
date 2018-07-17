@@ -7,6 +7,9 @@ import NavBar from './components/navBar';
 import AddVenue from './components/AddVenue';
 import SearchBar from './components/searchBar';
 
+// import '../styles/addVenue.scss';
+import './styles/index.css';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -29,7 +32,7 @@ class App extends React.Component {
           <Switch>
             <Route path="/login" component render={() => <LogIn user={user} onSetUserState={this.handleSetUserState} /> }/>
             <Route path="/venue" exact render={() => <Venue user={user} />} />
-            <Route parth="/VenueListings" component render={() => <VenueListings user={user} />} />
+            <Route path="/VenueListings" component render={() => <VenueListings user={user} />} />
             <Route path="/addVenue" render={() => <AddVenue user={user} />} />
             <Route path="/searchBar" component render={() => <SearchBar user={user} />} />
           </Switch>
