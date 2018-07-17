@@ -36,7 +36,6 @@ class App extends React.Component {
             <Route path="/addVenue" render={() => <AddVenue user={user} />} />
             <Route path="/searchBar" component render={() => <SearchBar user={user} />} />
           </Switch>
-          <Footer />
         }
       </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Venue from './Venue';
-import './venueListings.scss';
+// import './venueListings.scss';
 
 class VenueListings extends React.Component {
   constructor() {

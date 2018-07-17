@@ -22,6 +22,12 @@ class Login extends React.Component {
     if (response.status === 'connected'){
       this.FB.api('/me', userData => {
         this.props.onSetUserState(userData)
+        return (<Redirect
+          to={{
+            pathname: '/VenueListings',
+            state: { from: this.props.location }
+          }}
+        />)
       });
     } else {
       alert('Facebook login error');
