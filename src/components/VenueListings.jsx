@@ -23,8 +23,15 @@ class VenueListings extends React.Component {
   }
 
   render() {
-    return { listings } = this.state;
+    const { listings } = this.state;
+    return (
+      <React.Fragment>
+        <div className="listings">
+          {listings.map(listing => <Venue key={listing._id} {...listing} />)}
+        </div>
+      </React.Fragment>
+    );
   }
 }
 
-export default PropertyListings;
+export default VenueListings;
