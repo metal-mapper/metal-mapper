@@ -80,6 +80,13 @@ body {
   justify-content: center;
 }
 
+/* .left {
+  display: flex;
+  flex: 
+  flex-direction: column-reverse;
+  justify-content: center;
+} */
+
 /*
 
 This is the css for the footer - that I haven't been able to complete yet - KD
