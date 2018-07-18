@@ -1,5 +1,5 @@
 import React from 'react';
-import LogIn from './components/Login';
+// import LogIn from './components/Login';
 import { Switch, Route } from 'react-router-dom';
 import Venue from './components/Venue';
 import VenueListings from './components/VenueListings';
@@ -27,10 +27,10 @@ class App extends React.Component {
     return (
       <div>
         <NavBar />
-        {!this.state.user ?
-        <LogIn user={user} onSetUserState={this.handleSetUserState} /> :
+        {/* {!this.state.user ?
+        // <LogIn className="fb-login" user={user} onSetUserState={this.handleSetUserState} /> : */}
           <Switch>
-            <Route path="/login" component render={() => <LogIn user={user} onSetUserState={this.handleSetUserState} /> }/>
+            {/* <Route path="/login" component render={() => <LogIn user={user} onSetUserState={this.handleSetUserState} /> }/> */}
             <Route path="/venue" exact render={() => <Venue user={user} />} />
             <Route path="/VenueListings" component render={() => <VenueListings user={user} />} />
             <Route path="/addVenue" render={() => <AddVenue user={user} />} />
