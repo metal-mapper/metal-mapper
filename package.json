@@ -4,7 +4,7 @@
   "description": "react bootstrap application",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 3000",
+    "start": "webpack-dev-server --port 8080",
     "test": "jest"
   },
   "keywords": [

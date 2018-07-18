@@ -27,16 +27,23 @@ class App extends React.Component {
     return (
       <div>
         <NavBar />
+        <div className="searchbar"> 
+          <h2>Enter your nearest city</h2>
+          <SearchBar user={user} />
+        </div>
+
         {/* {!this.state.user ?
         // <LogIn className="fb-login" user={user} onSetUserState={this.handleSetUserState} /> : */}
-          <Switch>
-            {/* <Route path="/login" component render={() => <LogIn user={user} onSetUserState={this.handleSetUserState} /> }/> */}
-            <Route path="/venue" exact render={() => <Venue user={user} />} />
-            <Route path="/VenueListings" component render={() => <VenueListings user={user} />} />
-            <Route path="/addVenue" render={() => <AddVenue user={user} />} />
-            <Route path="/searchBar" component render={() => <SearchBar user={user} />} />
-          </Switch>
-        }
+        <Switch>
+          {/* <Route path="/login" component render={() => <LogIn user={user} onSetUserState={this.handleSetUserState} /> }/> */}
+          <Route path="/venue" exact render={() => <Venue user={user} />} />
+          <Route path="/VenueListings" render={() => <VenueListings user={user} />} />
+          <Route path="/AddVenue" render={() => <AddVenue user={user} />} />
+        </Switch>
+        <div className="middleimage">
+          <h2>Metal Mapper Guide</h2>
+          <p>Discover your perfect Metal Mapper experience!</p>
+        </div>
       </div>
     )
   };

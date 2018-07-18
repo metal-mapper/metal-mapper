@@ -12,13 +12,13 @@ class VenueListings extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/api/v1/metal-travel-guide')
+    axios.get('http://localhost:3001/api/v1/VenueListing')
       .then((response) => {
         this.setState({
           listings: response.data,
         });
       }).catch((err) => {
-        throw err;
+        // throw err;
       });
   }
 

@@ -114,7 +114,8 @@ class AddVenue extends React.Component {
         this.props.history.push('/');
         /* console.log(res);
         console.log(res.data); */
-      });
+      })
+      .catch(() => {});
   }
 
   render() {
