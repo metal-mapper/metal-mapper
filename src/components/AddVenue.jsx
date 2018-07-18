@@ -162,6 +162,8 @@ class AddVenue extends React.Component {
                 placeholder="Price Rating"
                 value={this.state.citySelect}
                 onChange={this.handleChange}
+                min={0}
+                max={5}
               />
             </div>
           </div>
